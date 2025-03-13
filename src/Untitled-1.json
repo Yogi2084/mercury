@@ -1,0 +1,46 @@
+{
+    "id": "1",
+    "title": "Doctor Appointment",
+    "description": "Visit Dr. Smith at 10:00 AM",
+    "dueDate": "2025-03-20T10:00:00",
+    "isCompleted": false
+  }
+
+
+
+
+{
+"id": "2",
+"title": "Project Submission",
+"description": "Submit project report by EOD",
+"dueDate": "2025-03-20",
+"isCompleted": false
+
+}
+
+{
+
+"id": "3",
+"title": "Gym Workout",
+"description": "Leg day at 7:00 AM",
+"dueDate": "2025-03-16",
+"isCompleted": false
+}
+
+
+{
+"id": "4",   
+"title": "Grocery Shopping",
+"description": "Buy groceries for the week",
+"dueDate": "2025-03-18",
+"isCompleted": false
+
+}
+  
+  {
+"id": "5",
+"title": "Meeting with Client", 
+"description": "Discuss project updates",
+"dueDate": "2025-03-19T15:00:00",
+"isCompleted": false
+}
