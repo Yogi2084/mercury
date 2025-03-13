@@ -44,7 +44,16 @@ app.get('/reminders/completed', (context) => {
   
   return context.json(completedReminders);
 });
-
+app.get('/reminders/not-completed', (context) => {
+  const incompletedReminders = reminders.filter((r) => r.isCompleted === false);
+  
+  if (incompletedReminders.length === 0) {
+    return context.json({ error: 'No incompleted reminders found' }, 404);
+  }
+  
+  return context.json(incompletedReminders);
+}
+);  
 
 app.get("/reminders/:id", (context) => {
   const id = context.req.param("id");
