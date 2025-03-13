@@ -55,6 +55,17 @@ app.get('/reminders/not-completed', (context) => {
 }
 );  
 
+app.get("/reminders/due-today", (c) => {
+  const todayDateString = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+  const dueTodayReminders = reminders.filter(
+    (reminder) => reminder.dueDate >= todayDateString && reminder.isCompleted === false
+  );
+  if (dueTodayReminders.length === 0) {
+    return c.json({ message: "No reminders due today" });
+    }
+  return c.json(dueTodayReminders,200);
+});
+
 app.get("/reminders/:id", (context) => {
   const id = context.req.param("id");
   console.log("Searching for ID:", id); 
