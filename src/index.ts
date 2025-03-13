@@ -35,6 +35,16 @@ app.post("/reminders", async (context) => {
   }
 });
 
+app.get('/reminders/completed', (context) => {
+  const completedReminders = reminders.filter((r) => r.isCompleted === true);
+  
+  if (completedReminders.length === 0) {
+    return context.json({ error: 'No completed reminders found' }, 404);
+  }
+  
+  return context.json(completedReminders);
+});
+
 
 app.get("/reminders/:id", (context) => {
   const id = context.req.param("id");
@@ -120,6 +130,7 @@ app.post("/reminders/:id/unmark-completed", (context) => {
   reminder.isCompleted = false;
   return context.json({ message: "Reminder unmarked as completed", reminder }, 200);
 });
+
 
 serve(app);
 console.log("Server is running on http://localhost:3000");
